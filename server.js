@@ -1,20 +1,16 @@
 const { Telegraf } = require('telegraf');
 const express = require('express');
 
-// এখানে আপনার আসল বটের টোকেন বসান
-const BOT_TOKEN =  
-
-const bot = new Telegraf(BOT_TOKEN);
 const app = express();
-
 app.use(express.json());
 
-// রুট ইউআরএল
+const BOT_TOKEN = process.env.BOT_TOKEN;
+const bot = new Telegraf(BOT_TOKEN);
+
 app.get('/', (req, res) => {
     res.send("Bot Server is Running!");
 });
 
-// টাইমওয়াল পোস্টব্যাক
 app.get('/timewall-postback', (req, res) => {
     const userId = req.query.userId;
     const reward = req.query.reward;
