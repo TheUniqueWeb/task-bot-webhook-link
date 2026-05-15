@@ -2,7 +2,7 @@ const { Telegraf } = require('telegraf');
 const express = require('express');
 
 // এখানে আপনার আসল বটের টোকেন বসান
-const BOT_TOKEN = "YOUR_TOKEN_HERE"; 
+const BOT_TOKEN =  
 
 const bot = new Telegraf(BOT_TOKEN);
 const app = express();
